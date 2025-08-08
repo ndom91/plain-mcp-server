@@ -1,0 +1,6 @@
+query myWorkspace {
+  myWorkspace {
+    id
+    name
+  }
+}

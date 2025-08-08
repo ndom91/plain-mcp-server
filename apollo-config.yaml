@@ -1,0 +1,31 @@
+# endpoint: https://core-api.uk.plain.com/graphql/v1
+endpoint: https://t76q2xitb1.execute-api.eu-west-2.amazonaws.com/graphql/v1
+authorization:
+  require_authentication: false
+transport:
+  type: stdio
+  # type: streamable_http
+  # address: 127.0.0.1
+  # port: 5001
+  operations:
+    source: local
+    paths:
+    - ./operations
+logging:
+  level: debug
+schema:
+  source: local
+  path: ./schema.graphql
+introspection:
+  execute:
+    enabled: true
+  introspect:
+    enabled: true
+  search:
+    enabled: true
+  validate:
+    enabled: true
+headers:
+  Content-Type: "application/json"
+  plain-workspace-id: "<WORKSPACE_ID>"
+  Authorization: "Bearer <TOKEN>"

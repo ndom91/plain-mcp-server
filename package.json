@@ -3,13 +3,14 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"introspect": "ENDPOINT=https://core-api.uk.plain.com/graphql/v1 mcp-graphql"
+		"mcpo": "uvx mcpo --port 8000 -- ./apollo-mcp-server ./apollo-config.yaml",
+		"introspect:server": "pnpm dlx @modelcontextprotocol/inspector http://localhost:5001/mcp",
+		"introspect:mcp": "./apollo-mcp-server ./apollo-config.yaml",
+		"dev": " pnpm run --stream '/^introspect:.*/' "
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"description": "",
-	"dependencies": {
-		"mcp-graphql": "^2.0.4"
-	}
+	"dependencies": {}
 }
