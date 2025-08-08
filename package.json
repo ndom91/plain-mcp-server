@@ -1,16 +1,16 @@
 {
-	"name": "mcp-server",
-	"version": "1.0.0",
-	"main": "index.js",
+	"name": "plain-mcp-server",
+	"version": "0.0.1",
+	"type": "module",
 	"scripts": {
 		"mcpo": "uvx mcpo --port 8000 -- ./apollo-mcp-server ./apollo-config.yaml",
-		"introspect:server": "pnpm dlx @modelcontextprotocol/inspector http://localhost:5001/mcp",
-		"introspect:mcp": "./apollo-mcp-server ./apollo-config.yaml",
-		"dev": " pnpm run --stream '/^introspect:.*/' "
+		"inspect:server": "pnpm dlx @modelcontextprotocol/inspector http://localhost:5001/mcp",
+		"inspect:mcp": "./apollo-mcp-server ./apollo-config.yaml",
+		"dev": " pnpm run --stream '/^inspect:.*/' "
 	},
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
+	"author": "Nico Domino <yo@ndo.dev>",
+	"license": "MIT",
+	"description": "MCP Server demo for Plain.com",
 	"dependencies": {}
 }

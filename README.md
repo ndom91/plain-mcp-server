@@ -12,20 +12,13 @@ install the binary for both Mac OS or Linux.
 curl -sSL https://mcp.apollo.dev/download/nix/latest | sh
 ```
 
-2. Next, install the node dependencies for the demo app:
+2. Update the `apollo-config.yaml`
 
-```bash
-pnpm install
-```
+You'll need to add at least your Plain API token and update the GraphQL API URL.
 
-3. Update the `apollo-config.yaml`
+3. Finally, running the setup depends on what you're wanting to do.
 
-You'll need to add at least your Plain API token and probably update the GraphQL
-API URL.
-
-4. Finally, running the setup depends on what you're wanting to do.
-
-- If you want to just start something and debug the MCP server, ensure the `transport` in `apollo-config.yaml` is set to
+- If you want to just start something and play around, ensure the `transport` in `apollo-config.yaml` is set to
   `streamable_http`. You can then run `pnpm:dev` which will start 2 things, the
   mcp server and the mcp-inspector project (analogous to GraphiQL). Use `http://localhost:5001/mcp`
   as the MCP server URL in the inspector web ui.
@@ -36,13 +29,22 @@ API URL.
       install uv`.
     - Then you'll have to set the transport to `stdio` in the apollo config and run `pnpm mcpo`.
 
-## OpenWebUI
+## Usage
+
+### MCP Inspector
+
+To start the mcp inspector, run `pnpm inspect:server`. It will open the web ui in
+your browser automatically. Then ensure `apollo-mcp-server` is running, for
+example via `pnpm inspect:mcp`. At which point you can add the server URL to the
+inspector web ui which by default is `http://localhost:5001/mcp`.
+
+### OpenWebUI
 
 To add this MCP server to OpenWebUI, you can add the `mcpo` proxy address
 (`http://localhost:8000` by default) to a new "Tool" entry. Found in the admin
 portal under "Tools".
 
-## Claude
+### Claude
 
 To add this to Claude Desktop, you don't need the `mcpo` OpenAI proxy. Just add the following to your Claude Desktop config
 (`~/.config/Claude/claude_desktop_config.json`) and you can connect directly to
