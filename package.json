@@ -1,0 +1,15 @@
+{
+	"name": "mcp-server",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"introspect": "ENDPOINT=https://core-api.uk.plain.com/graphql/v1 mcp-graphql"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"mcp-graphql": "^2.0.4"
+	}
+}
